@@ -1,6 +1,7 @@
 # todolist_lifeofgod
 
-A new Flutter project.
+tomato 버림
+갓생사는 Todolist
 
 ## Getting Started
 
