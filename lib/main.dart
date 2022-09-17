@@ -2,27 +2,42 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
+class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'app',
-      home: Home(),
+    return Scaffold(
+      body: Center(
+        child: Icon(
+          Icons.apartment_outlined,
+          size: MediaQuery.of(context).size.width * 0.785,
+        ),
+      ),
     );
   }
 }
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
-
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Hi'),
-      ),
+    return FutureBuilder(
+      future: Future.delayed(Duration(seconds: 3)),
+      builder: (context, AsyncSnapshot snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return MaterialApp(home: Splash());
+        } else {
+          return MaterialApp(
+            title: 'Flutter Demo',
+            theme: ThemeData(
+              primarySwatch: Colors.blue,
+            ),
+            home: Scaffold(
+              appBar: AppBar(
+                title: Text('Hi'),
+              ),
+            )
+          );
+        }
+      },
     );
   }
 }
