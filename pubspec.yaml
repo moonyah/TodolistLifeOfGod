@@ -31,6 +31,7 @@ dependencies:
     sdk: flutter
 
   flutter_native_splash: ^2.2.9
+  introduction_screen: ^3.0.2
 
 flutter_native_splash:
   color: "#f5cb42"

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
+import 'onboarding.dart';
 
 void main(){
-  WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
-  FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
+ // WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+ // FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
   runApp(const MyApp());
 }
 
@@ -15,10 +16,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.cyan
+          primarySwatch: Colors.grey,
+          textTheme: const TextTheme(
+              bodyText2: TextStyle(
+                  fontSize: 30,
+                  color: Colors.white
+              )
+          )
       ),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
+      home: const OnBoardingPage(),
     );
   }
 }
