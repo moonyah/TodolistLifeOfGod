@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
           textTheme: const TextTheme(
               bodyText2: TextStyle(
                   fontSize: 30,
-                  color: Colors.white
+                  color: Colors.grey
               )
           )
       ),
@@ -54,11 +54,36 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Splash Screen'),
-        backgroundColor: Colors.red,
+        title: Text('Life of God'),
+        backgroundColor: Colors.white,
       ),
-      body: Center(
+      body: const Center(
         child: Text("HI!"),
+      ),
+      endDrawer:Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            const DrawerHeader(
+              child: Text('Drawer Header'),
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+            ),
+            ListTile(
+              title: Text('Item 1'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+            ListTile(
+              title: Text('Item 2'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
