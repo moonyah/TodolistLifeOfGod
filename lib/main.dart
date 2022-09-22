@@ -58,7 +58,7 @@ class _MyHomePageState extends State<MyHomePage> {
         backgroundColor: Colors.white,
       ),
       body: const Center(
-        child: Text("HI!"),
+        child: Text("Hi!"),
       ),
       endDrawer:Drawer(
         child: ListView(
