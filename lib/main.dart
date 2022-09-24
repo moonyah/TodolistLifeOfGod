@@ -25,7 +25,8 @@ class MyApp extends StatelessWidget {
           )
       ),
       debugShowCheckedModeBanner: false,
-      home: const OnBoardingPage(),
+      home: const DefaultTabController(length: 2,
+      child: OnBoardingPage()),
     );
   }
 }
@@ -38,6 +39,9 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+
+  static const List<Widget> _widgetOptions = <Widget>[
+  ];
 
   @override
   void initState() {
@@ -56,9 +60,18 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text('Life of God'),
         backgroundColor: Colors.white,
-      ),
-      body: const Center(
-        child: Text("Hi!"),
+        bottom: const TabBar(
+          indicatorColor: Colors.red,
+          labelColor: Colors.black,
+          tabs: [
+            Tab(
+              text: '달력',
+            ),
+            Tab(
+              text: '도전',
+            )
+          ],
+        ),
       ),
       endDrawer:Drawer(
         child: ListView(
@@ -85,6 +98,11 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
+      body: const TabBarView(
+        physics: NeverScrollableScrollPhysics(),
+          children: []
+      ),
     );
   }
 }
+
